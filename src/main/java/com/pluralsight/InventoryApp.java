@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class InventoryApp {
 
@@ -13,7 +14,9 @@ public class InventoryApp {
 
         System.out.println("We carry the following inventory: ");
 
-        //Collections.sort(inventory.name);
+        // Bonus 2, sorting alphabetically by name
+        inventory.sort((inventory1, inventory2) ->
+                          inventory1.getName().compareTo(inventory2.getName()));
 
         for (int i = 0; i < inventory.size(); i++) {
             Product p = inventory.get(i);
